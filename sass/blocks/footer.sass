@@ -1,0 +1,131 @@
+.footer
+    padding-top: 56px
+    background: #262626
+    &__logo
+        display: block
+        margin-bottom: 40px
+    &__body
+        padding: 32px 0 48px 0
+        border-top: 1px solid rgba(#fff, 0.4)
+        border-bottom: 1px solid rgba(#fff, 0.4)
+        display: flex
+        justify-content: space-between
+    &__link
+        display: block
+        font-weight: 400
+        font-size: 13px
+        color: #FFFFFF
+        &:hover
+            text-decoration: underline
+        &:not(:last-child)
+            margin-bottom: 23px
+
+    &__download
+        padding-top: 40px
+        padding-bottom: 40px
+        border-bottom: 1px solid rgba(#fff, 0.4)
+        display: flex
+        align-items: center
+        justify-content: center
+        &-item
+            display: block
+            img
+                max-width: 135px
+                width: 100%
+            &:not(:last-child)
+                margin-right: 40px
+
+    &__bottom
+        padding: 40px 0
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+    &__personal-data,
+    &__user-agree,
+    &__official
+        font-weight: 400
+        font-size: 11px
+        color: #FFFFFF
+
+    &__personal-data,
+    &__user-agree
+        &:hover
+            text-decoration: underline
+                
+            
+
+    .form__lang select
+        position: relative
+        width: 228px
+        padding: 12px 0 12px 48px
+        background: #3B3B3B
+        border: none
+        border-radius: 2px
+        font-weight: 400
+        font-size: 13px
+        color: #FFFFFF
+    .footer__social
+        &-hashtag
+            display: block
+            margin-top: 30px
+            font-weight: 400
+            font-size: 16px
+            color: #FFFFFF
+            span
+                font-weight: 400
+                font-size: 16px
+                color: #49A144
+
+    .social__links 
+        margin-top: 20px
+        display: flex
+        align-items: center
+    .social__link
+        transition: transform 0.4s
+        &:hover
+            transition: transform 0.4s
+            transform: scale(1.1)
+        &:not(:last-child)
+            margin-right: 15px
+
+.custom-select
+    position: relative
+    user-select: none
+    &__top
+        position: relative
+        width: 228px
+        font-weight: 400
+        font-size: 13px
+        color: #fff
+        padding-top: 12px
+        padding-bottom: 12px
+        padding-left: 48px
+        cursor: pointer
+        background: #3B3B3B
+        border-radius: 2px
+        &::after
+            content: url('../icons/world.svg')
+            position: absolute
+            top: 12px
+            left: 16px
+        &::before
+            content: url('../icons/arrow-down.svg')
+            position: absolute
+            top: 12px
+            right: 8px
+    &__dropdown
+        display: none
+        position: absolute
+        left: 0
+        top: calc(100% + 1px)
+        width: 100%
+        min-width: 115px
+        z-index: 20
+        color: #fff
+        background: #3B3B3B
+    &__item
+        padding: 10px
+        font-size: 13px
+        &:hover
+            background: rgba(#494949, 0.8)

@@ -1,0 +1,47 @@
+.catalog
+    padding-top: 55px
+    &__title
+        font-weight: 400
+        font-size: 22px
+        color: #1D1D1D
+    &__items
+        margin-top: 25px
+        margin-bottom: 80px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        flex-wrap: wrap
+    &__item
+        position: relative
+        width: 32%
+        background: rgba(#757575, 0.04)
+        margin-bottom: 20px
+        transition: transform 0.4s
+        &-img
+            width: 100%
+        &-title a
+            font-weight: 400
+            font-size: 16px
+            color: #1D1D1D
+            &::before
+                content: ''
+                position: absolute
+                top: 0
+                right: 0
+                bottom: 0
+                left: 0
+        &-price
+            margin-top: 10px
+            font-weight: 400
+            font-size: 14px
+            color: #626262
+        &-time
+            margin-top: 10px
+            font-weight: 400
+            font-size: 13px
+            color: #1D1D1D
+        &-inner
+            padding: 15px 0 20px 0
+        &:hover
+            transition: transform 0.4s
+            transform: scale(1.03)

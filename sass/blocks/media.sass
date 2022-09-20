@@ -1,0 +1,96 @@
+@media (max-width:961px)
+    .container
+        padding: 0 8px
+    
+@media (max-width: 768px)
+    .catalog__item
+        width: 49%
+    .products
+        .product
+            width: 100%
+            margin-bottom: 32px
+
+    .category
+        display: none
+
+@media (max-width: 576px)
+    .header
+        &__btn-cart
+            display: none
+        &__btn-in
+            margin-right: 0
+
+    .catalog__item
+        width: 100%
+
+    .promo
+        position: relative
+    .promo .promo__info-bottom
+        flex-direction: column
+    .promo .promo__info
+        padding: 24px 49px
+        position: absolute
+        bottom: -60px
+        left: 50%
+        transform: translateX(-50%)
+        width: 308px
+        text-align: center
+    .promo .promo__info .promo__info-title
+        font-size: 24px
+    .promo .promo__info .promo__info-time
+        margin-top: 16px
+        font-size: 12px
+
+
+    .products
+        padding-top: 112px !important
+        &__title
+            position: relative
+            text-align: center
+            &::before
+                content: ''
+                position: absolute
+                bottom: -12px
+                left: 50%
+                transform: translateX(-50%)
+                width: 50px
+                height: 1px
+                background: #757575
+        &__wrapper
+            margin-top: 56px !important
+        .product
+            margin-bottom: 16px
+    .product
+        max-height: 102px !important
+    .product .product__img
+        max-width: 102px !important
+        height: 100%
+    .product .product__info-price
+        font-size: 14px
+    .product .product__info-price
+        margin-top: 14px
+        
+
+    .footer
+        &__body,
+        &__bottom
+            flex-wrap: wrap
+        &__social,
+        &__links
+            width: 100%
+        &__social
+            margin-bottom: 40px
+        &__links:not(:last-child)
+            margin-bottom: 23px
+
+        &__bottom
+            a, p
+                width: 100%
+            p
+                margin-bottom: 24px
+            a:not(:last-child)
+                margin-bottom: 24px
+
+.pageup
+    width: 64px
+    height: 64px
