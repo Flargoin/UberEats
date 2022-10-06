@@ -73,21 +73,22 @@
             font-size: 16px
             color: #FFFFFF
             span
+                color: #49A144
+        &-links 
+            margin-top: 20px
+            display: flex
+            align-items: center
+        &-link
+            transition: transform 0.4s
+            &:hover
+                transition: transform 0.4s
+                transform: scale(1.1)
+            &:not(:last-child)
+                margin-right: 15px
+            span
                 font-weight: 400
                 font-size: 16px
                 color: #49A144
-
-    .social__links 
-        margin-top: 20px
-        display: flex
-        align-items: center
-    .social__link
-        transition: transform 0.4s
-        &:hover
-            transition: transform 0.4s
-            transform: scale(1.1)
-        &:not(:last-child)
-            margin-right: 15px
 
 .custom-select
     position: relative
