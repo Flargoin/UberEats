@@ -30,6 +30,13 @@ function closeModal(overlay, modalName, closeBtn, activeClass) {
             overlay.classList.remove('modal--active');
             modalName.classList.remove(activeClass);
         });
+        modal.addEventListener('click', function (e) {
+            if(e.target === this) {
+                body.classList.remove('open-modal');
+                modal.classList.remove('modal--active');
+                modalName.classList.remove(activeClass);
+            }
+        })
     });
 }
 

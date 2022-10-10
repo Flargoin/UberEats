@@ -14,8 +14,8 @@
 .modal__cart,
 .modal__login,
 .modal__reg
-    position: absolute
-    top: 50%
+    position: fixed
+    top: -50%
     left: 50%
     transform: translate(-50%, -50%)
     width: 780px
@@ -83,7 +83,7 @@
     margin: 0 auto
 
 .cart
-    display: none
+    display: block
     transition: top 0.4s
     &__items
         padding-top: 45px
@@ -129,6 +129,7 @@
                 transform: scale(1.05)
     &--active
         display: block
+        opacity: 1
 
 .good
     display: flex
@@ -177,7 +178,7 @@
 
 .login,
 .reg
-    display: none
+    display: block
     transition: top 0.4s
     &-form
         padding-top: 40px
@@ -238,6 +239,7 @@
             border-radius: 4px
     &--active
         display: block
+        top: 50%
 
 .custom-input
     &__mail,
