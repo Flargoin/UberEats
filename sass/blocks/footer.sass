@@ -105,16 +105,24 @@
         cursor: pointer
         background: #3B3B3B
         border-radius: 2px
-        &::after
+        &::before
             content: url('../icons/world.svg')
             position: absolute
             top: 12px
             left: 16px
-        &::before
-            content: url('../icons/arrow-down.svg')
+        &::after
+            content: ""
             position: absolute
-            top: 12px
             right: 8px
+            top: 50%
+            background-image: url(./../icons/arrow-down.svg)
+            background-position: center
+            background-repeat: no-repeat
+            background-size: cover
+            transform: translateY(-50%)
+            transition: transform 0.4s
+            width: 10px
+            height: 6px
     &__dropdown
         display: none
         position: absolute
@@ -128,5 +136,11 @@
     &__item
         padding: 10px
         font-size: 13px
+        cursor: pointer
         &:hover
             background: rgba(#494949, 0.8)
+    &--open
+        .custom-select__top::after
+            transform: translateY(-50%) rotate(180deg)
+        .custom-select__dropdown
+            display: block
