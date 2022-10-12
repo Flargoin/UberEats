@@ -58,3 +58,17 @@ customSelect.addEventListener('click', (e) => {
         e.currentTarget.querySelector('.custom-select__top').textContent = text;
     }
 })
+
+
+
+/* Scroll to top */
+
+/* const pageUp = document.querySelector('.pageup'),
+      topPoint = document.querySelector('#top');
+
+pageUp.addEventListener('click', () => {
+    window.scrollTo({
+        top: topPoint.offsetTop,
+        behavior: 'smooth'
+    });
+}); */
