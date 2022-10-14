@@ -5,9 +5,11 @@
 const modal         = document.querySelector('.modal'),             /* Задний тёмный фон */
       body          = document.querySelector('body'),               /* Документ */
       modalClose    = document.querySelectorAll('.modal__close'),   /* Кнопка закрытия модального окна */
+      modalCancel   = document.querySelector('.cart__bottom-no'),   /* Кнопка ОТМЕНА в модальном окне корзины */
       loginBtn      = document.querySelector('.header__btn-in'),    /* Кнопка открытия окна логина */
       cartBtn       = document.querySelector('.header__btn-cart'),  /* Кнопка открытия окна корзины */
-      regBtn        = document.querySelector('.login-form__registration-link'), /* ссылка на окно регистрации */
+      regLink       = document.querySelector('.login-form__registration-link'), /* ссылка на окно регистрации */
+      loginLink     = document.querySelector('.reg-form__login-link'), /* ссылка на окно логина */
       cart          = document.querySelector('.cart'),              /* окно корзины */
       login         = document.querySelector('.login'),             /* окно логина */
       reg           = document.querySelector('.reg');               /* окно регистрации */
@@ -18,12 +20,19 @@ function openModal(overlay, modalName, modalBtn, activeClass) {
         overlay.classList.add('modal--active');
         modalName.classList.add(activeClass);
         body.classList.add('open-modal');
+
+        if(e.currentTarget === regLink) {
+            login.classList.remove('login--active');
+        } else if(e.currentTarget === loginLink) {
+            reg.classList.remove('reg--active');
+        }
     });
 }
 
 openModal( modal, login, loginBtn, 'login--active');
 openModal( modal, cart, cartBtn, 'cart--active');
-openModal( modal, reg, regBtn, 'reg--active');
+openModal( modal, reg, regLink, 'reg--active');
+openModal( modal, login, loginLink, 'login--active');
 
 /* Функция закрытия модального окна */
 function closeModal(overlay, modalName, closeBtn, activeClass) {
@@ -40,6 +49,12 @@ function closeModal(overlay, modalName, closeBtn, activeClass) {
                 body.classList.remove('open-modal');
             }
         })
+    });
+
+    modalCancel.addEventListener('click', () => {
+        overlay.classList.remove('modal--active');
+        modalName.classList.remove(activeClass);
+        body.classList.remove('open-modal');
     });
 }
 
@@ -105,24 +120,25 @@ countInput.forEach(el => {
             countPlus.classList.remove('count__btn--disabled');
         }
     });
-})
 
-/* Работа кнопки прибавления в кол-ве продуктов */
-countPlus.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        let currentValue = parseInt(countInput.value);
-        console.log(currentValue);
-        currentValue++;
-        countInput.value = currentValue;
-    });
-})
+    /* Работа кнопки прибавления в кол-ве продуктов */
+/*     countPlus.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            console.log(parseInt(countInput.value));
+            let currentValue = parseInt(countInput.value);
+            console.log(currentValue);
+            currentValue++;
+            countInput.value = currentValue;
+        });
+    }) */
 
-/* Работа кнопки убавления в кол-ве продуктов */
-countPlus.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        let currentValue = parseInt(countInput.value);
-        console.log(currentValue);
-        currentValue++;
-        countInput.value = currentValue;
-    });
+    /* Работа кнопки убавления в кол-ве продуктов */
+/*     countMinus.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            let currentValue = parseInt(countInput.value);
+            console.log(currentValue);
+            currentValue--;
+            countInput.value = currentValue;
+        });
+    }) */
 })
