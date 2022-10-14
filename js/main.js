@@ -10,9 +10,11 @@ const modal         = document.querySelector('.modal'),             /* Задн�
       cartBtn       = document.querySelector('.header__btn-cart'),  /* Кнопка открытия окна корзины */
       regLink       = document.querySelector('.login-form__registration-link'), /* ссылка на окно регистрации */
       loginLink     = document.querySelector('.reg-form__login-link'), /* ссылка на окно логина */
+      forgetLink    = document.querySelector('.login-form__password-forget'), /* ссылка на окно восстановления пароля */
       cart          = document.querySelector('.cart'),              /* окно корзины */
       login         = document.querySelector('.login'),             /* окно логина */
-      reg           = document.querySelector('.reg');               /* окно регистрации */
+      reg           = document.querySelector('.reg'),               /* окно регистрации */
+      forget        = document.querySelector('.forget');            /* окно восстановления пароля */
 
 /* Функция открытия модального окна */    
 function openModal(overlay, modalName, modalBtn, activeClass) {
@@ -23,8 +25,17 @@ function openModal(overlay, modalName, modalBtn, activeClass) {
 
         if(e.currentTarget === regLink) {
             login.classList.remove('login--active');
+            forget.classList.remove('forget--active');
         } else if(e.currentTarget === loginLink) {
             reg.classList.remove('reg--active');
+            forget.classList.remove('forget--active');
+        } else if (e.currentTarget === forgetLink) {
+            login.classList.remove('login--active');
+            reg.classList.remove('reg--active');
+        } else if (e.currentTarget === cartBtn) {
+            login.classList.remove('login--active');
+            reg.classList.remove('reg--active');
+            forget.classList.remove('forget--active');
         }
     });
 }
@@ -33,6 +44,7 @@ openModal( modal, login, loginBtn, 'login--active');
 openModal( modal, cart, cartBtn, 'cart--active');
 openModal( modal, reg, regLink, 'reg--active');
 openModal( modal, login, loginLink, 'login--active');
+openModal( modal, forget, forgetLink, 'forget--active');
 
 /* Функция закрытия модального окна */
 function closeModal(overlay, modalName, closeBtn, activeClass) {
